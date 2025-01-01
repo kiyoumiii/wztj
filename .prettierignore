@@ -1,7 +1,0 @@
-*.md
-*.svg
-*.ttf
-*.woff
-dist
-node_modules
-Test
