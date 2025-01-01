@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rate: 1;
+}
+
+@media screen and (max-width: 960px) {
+  :root {
+    --rate: 1.5;
+  }
+}
+
+.spirit_into-1,
+.spirit_into-2,
+.spirit_into-3,
+.spirit_into-4 {
+  width: calc(26.0417vw / 2 * var(--rate));
+  height: calc(24.2188vw / 2 * var(--rate));
+  background-size: calc(52.0833vw / 2 * var(--rate)) calc(48.4375vw / 2 * var(--rate));
+  background-image: url("https://lengyibai.github.io/wzry-material/image/white_logo.png");
+}
+
+.spirit_into-1 {
+  background-position: 0 0;
+}
+
+.spirit_into-2 {
+  background-position: calc(-26.0417vw / 2 * var(--rate)) 0;
+}
+
+.spirit_into-3 {
+  background-position: 0 calc(-24.2188vw / 2 * var(--rate));
+}
+
+.spirit_into-4 {
+  background-position: calc(-26.0417vw / 2 * var(--rate)) calc(-24.2188vw / 2 * var(--rate));
+}
+
+.body {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  user-select: none;
+
+  .loading {
+    @time: 3s;
+
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
+
+    .box {
+      animation:
+        into-scale @time forwards ease-out,
+        into-opacity @time - 1 forwards;
+
+      @keyframes into-opacity {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes into-scale {
+        0% {
+          opacity: 0;
+          transform: scale(3);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .logo {
+        width: calc(26.0417vw / 2 * var(--rate));
+        height: calc(24.2188vw / 2 * var(--rate));
+
+        @media screen and (max-width: 960px) {
+          --rate: 2.5;
+        }
+
+        .a,
+        .b,
+        .c,
+        .d {
+          position: absolute;
+        }
+
+        .inside-box {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          animation: inside-box @time * 2 @time infinite linear;
+
+          @keyframes inside-box {
+            100% {
+              transform: rotate(-360deg);
+            }
+          }
+
+          .inside {
+            width: 100%;
+            height: 100%;
+            animation: inside-rotate @time forwards linear;
+
+            @keyframes inside-rotate {
+              100% {
+                transform: rotate(-360deg);
+              }
+            }
+
+            .a {
+              animation: into-a @time forwards ease-out;
+
+              @keyframes into-a {
+                0% {
+                  transform: translateX(-100%);
+                }
+
+                100% {
+                  transform: translateX(0%);
+                }
+              }
+            }
+
+            .b {
+              animation: into-b @time forwards ease-out;
+
+              @keyframes into-b {
+                0% {
+                  transform: translateX(100%);
+                }
+
+                100% {
+                  transform: translateX(0%);
+                }
+              }
+            }
+          }
+        }
+
+        .outside-box {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          animation: outside-box @time @time infinite linear;
+
+          @keyframes outside-box {
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          .outside {
+            width: 100%;
+            height: 100%;
+            animation: outside-rotate @time forwards linear;
+
+            @keyframes outside-rotate {
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            .c {
+              animation: into-c @time forwards ease-out;
+
+              @keyframes into-c {
+                0% {
+                  transform: translate(-100%, -100%);
+                }
+
+                100% {
+                  transform: translateX(0%);
+                }
+              }
+            }
+
+            .d {
+              animation: into-d @time forwards ease-out;
+
+              @keyframes into-d {
+                0% {
+                  transform: translate(100%, 100%);
+                }
+
+                100% {
+                  transform: translateX(0%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .text-box {
+      position: relative;
+      overflow: hidden;
+      width: 0;
+      height: calc(13.8021vw * var(--rate));
+      animation: into-move 0.5s @time - 0.1s forwards;
+
+      @keyframes into-move {
+        100% {
+          margin-left: 2.6042vw;
+          width: calc(37.0833vw * var(--rate));
+        }
+      }
+
+      .text {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #fff, #fff) no-repeat right center / 100% 100%;
+        animation: leave-bg 0.5s @time + 0.25s forwards;
+
+        @keyframes leave-bg {
+          100% {
+            background-size: 0 100%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 960px) {
+        height: 0;
+
+        @keyframes into-move {
+          100% {
+            margin-left: 0;
+            margin-top: 5vw;
+            width: calc(37.0833vw * var(--rate));
+            height: calc(13.8021vw * var(--rate));
+          }
+        }
+      }
+    }
+  }
+
+  .into {
+    position: absolute;
+    bottom: 1em;
+    right: 3em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: calc(2.5vw * var(--rate));
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: into 0.75s 3s forwards;
+
+    @keyframes into {
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .text {
+      margin-right: 1em;
+      font-size: inherit;
+      font-weight: bold;
+    }
+
+    .arrows {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .arrow {
+        position: absolute;
+        font-size: inherit;
+        color: #fff;
+        left: calc(var(--i) * -1vw * var(--rate));
+        animation: move 1.75s calc(var(--i) * 0.3s) linear infinite;
+      }
+    }
+
+    @keyframes move {
+      0% {
+        opacity: 0;
+        transform: translateX(0);
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(calc(3vw * var(--rate)));
+        opacity: 0;
+      }
+    }
+  }
+
+  .tip {
+    position: absolute;
+    left: 1rem;
+    color: rgba(255, 255, 255, 0.25);
+    top: 1rem;
+    font-size: calc(2vw * var(--rate));
+  }
+}

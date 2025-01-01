@@ -1,5 +1,5 @@
 dev-dist
-dist
+# dist
 node_modules
 package-lock.json
 visualizer.html
