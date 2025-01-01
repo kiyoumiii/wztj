@@ -23,7 +23,7 @@ const handleQrCode = (e: Event) => {
       <span class="red">设计不人性化</span>、<span class="red">功能不合理</span>、
       <span class="red">功能未正常加载</span>、<span class="red">点击按钮无反馈</span>、
       <span class="red">元素样式错位</span>、
-      <span class="red">图片加载失败</span>等各种问题，请在群里积极<span class="blue">@冷弋白</span>
+      <span class="red">图片加载失败</span>等各种问题，请在群里积极<span class="blue">@群主大大</span>
       。
     </div>
   </div>

@@ -8,10 +8,10 @@ import { vMouseTip } from "@/directives";
       text: MOUSE_TIP.vz77,
     }"
     class="copyright"
-    href="https://github.com/lengyibai"
+    href="https://github.com/kiyoumiii"
     target="_blank"
   >
-    @{{ $t("冷弋白") }}
+    @{{ $t("开发者") }}
   </a>
 </template>
 

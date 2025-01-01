@@ -66,7 +66,7 @@ export class BarragesGenerate {
         this.enable = false;
         return;
       }
-      this.createLybBarrage(`冷弋白：弹幕已装填完毕，剩余${this.data.length}条`);
+      this.createLybBarrage(`弹幕已装填完毕，剩余${this.data.length}条`);
 
       this.readyTimer = setTimeout(() => {
         this.enable = true;
@@ -74,7 +74,7 @@ export class BarragesGenerate {
       }, 5000);
 
       this.customTimer = setInterval(() => {
-        this.createLybBarrage(`冷弋白：还剩${this.data.length}条弹幕`);
+        this.createLybBarrage(`还剩${this.data.length}条弹幕`);
       }, 20000);
     };
     window.addEventListener("visibilitychange", this.init);
@@ -199,8 +199,8 @@ export class BarragesGenerate {
       self: true,
       heroId: 0,
       skinName: "",
-      gender: "男",
-      name: "冷弋白",
+      gender: "女",
+      name: "kiyoumi",
       desc: "独立开发者",
       text: "点击下面的图片可以查看大图，图中文件：src/components/business/Global/Control/components/K-HeroDetail/index.vue",
       avatar: _getImgLink("lyb"),
@@ -240,7 +240,7 @@ export class BarragesGenerate {
   /** @description 填充完毕后，重新启用弹幕 */
   restart(data: Global.Barrage[]) {
     this.data = data;
-    this.createLybBarrage(`冷弋白：弹幕已重新装填完毕，剩余${this.data.length}条`);
+    this.createLybBarrage(`弹幕已重新装填完毕，剩余${this.data.length}条`);
     setTimeout(() => {
       this.generateBarrage();
     }, 5000);
